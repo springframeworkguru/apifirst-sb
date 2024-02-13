@@ -4,7 +4,6 @@ properties:
     type: string
     format: uuid
     description: The unique identifier of the image
-    readOnly: true
     nullable: true
   url:
     type: string
