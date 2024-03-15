@@ -86,3 +86,7 @@ delete:
       description: Not Found   
     '409':
       description: Conflict
+      content: 
+        application/problem+json: 
+          schema: 
+            $ref: ../../components/schemas/Problem.yaml
