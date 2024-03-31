@@ -20,7 +20,7 @@ tags:
   - name: Product
     description: Product operations   
   - name: Order
-    description: Operations about orders.
+    description: Order operations
 servers:
   - url: https://{tenant}/api/v1
     variables:
