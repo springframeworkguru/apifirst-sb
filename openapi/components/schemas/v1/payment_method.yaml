@@ -1,0 +1,31 @@
+type: object
+properties: 
+  id: 
+    $ref: ../common/uuid_id.yaml
+  displayName: 
+    type: string
+    minLength: 2
+    maxLength: 100
+    example: My Chase Card
+  cardNumber:
+    type: integer
+    example: 1234567890123456
+  expiryMonth:
+    type: integer
+    example: 7
+  expiryYear:
+    type: integer
+    example: 26
+  cvv:
+    type: integer
+    example: 123
+  dateCreated:
+    $ref: ../common/iso_timestamp.yaml
+  dateUpdated:
+    $ref: ../common/iso_timestamp.yaml
+required: 
+  - displayName
+  - cardNumber
+  - expiryMonth
+  - expiryYear
+  - cvv    

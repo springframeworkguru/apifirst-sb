@@ -1,0 +1,83 @@
+get: 
+  tags: 
+    -  Order  
+  summary: Get Order by id
+  description: Get Order by id
+  operationId: getOrderById
+  parameters: 
+    - $ref: ../../components/parameters/order_id.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/order.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+put: 
+  tags: 
+    -  Order
+  summary: Update Order
+  description: Update Order
+  operationId: updateOrder
+  parameters: 
+    - $ref: ../../components/parameters/order_id.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../../components/schemas/v1/order_update.yaml
+  responses:
+    '200':
+      description: Order Updated
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/order.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+patch: 
+  tags: 
+    -  Order
+  summary: Patch Order
+  description: Patch Order
+  operationId: patchOrder
+  parameters: 
+    - $ref: ../../components/parameters/order_id.yaml
+  requestBody: 
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../../components/schemas/v1/order_patch.yaml
+  responses:
+    '200':
+      description: Order Updated
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/order.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+delete:     
+  tags: 
+    -  Order
+  summary: Delete a order by ID
+  description:  |
+    Patch a order by ID
+  operationId: deleteOrderById
+  parameters: 
+    - $ref: ../../components/parameters/order_id.yaml
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml  

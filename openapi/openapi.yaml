@@ -1,46 +1,50 @@
-openapi: 3.1.0
+openapi: 3.0.3
 info:
   version: 1.0.0
   title: API First with Spring Boot
   termsOfService: https://example.com/terms/
   contact:
-    email: john@springframework.guru
-    url: http://example.com/contact
+    email: jlvieyra@serviciostbernal.com
+    url: https://serviciostbernal.com
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
     url: https://redocly.github.io/openapi-template/logo.png
   description: >
-    This is an **example** API to demonstrate features of the OpenAPI
+    This is an **example** API to demonsasfsdfsdfsdfstrate features of the OpenAPI
     specification.
-
-    # Introduction
-
-    guesswork in calling the service.
 # tags:
-#   - name: Echo
-#     description: Example echo operations.
-#   - name: User
-#     description: Operations about users.
-#   - name: Tag
-#     description: This is a tag description.
+#   - name: Customer
+#     description: Customer operations
+#   - name: Product
+#     description: Product operations   
+#   - name: Order
+#     description: Operations about orders.
 servers:
   - url: https://{tenant}/api/v1
     variables:
       tenant:
         default: www
         description: Your tenant id
-  - url: https://example.com/api/v1
+  - url: https://springframework.guru/api/v1
 paths:
-  /users/{username}:
-    $ref: paths/users_{username}.yaml
-  # /echo:
-  #   $ref: paths/echo.yaml
-  # /pathItem:
-  #   $ref: paths/pathItem.yaml
-  # /pathItemWithExamples:
-  #   $ref: paths/pathItemWithExamples.yaml
+  /v1/customers:
+    $ref: paths/v1/customers.yaml
+  /v1/customers/{customerId}:
+    $ref: paths/v1/customers_{customerId}.yaml
+  /v1/products:
+    $ref: paths/v1/products.yaml
+  /v1/products/{productId}:
+    $ref: paths/v1/products_{productId}.yaml    
+  /v1/orders:
+    $ref: paths/v1/orders.yaml
+  /v1/orders/{orderId}:
+    $ref: paths/v1/orders_{orderId}.yaml
+  /v1/categories:
+    $ref: paths/v1/categories.yaml  
+security: 
+  -  basic_auth: []  
 components:
   securitySchemes:
     main_auth:

@@ -1,0 +1,88 @@
+get: 
+  tags: 
+    -  Customer 
+  summary: Get a customer by ID
+  description:  |
+    Get a customer by ID
+  operationId: getCustomerById
+  parameters: 
+    - $ref: ../../components/parameters/customer_id.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/customer.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+put:      
+  tags: 
+    -  Customer
+  summary: Update a customer by ID
+  description:  |
+    Update a customer by ID
+  operationId: updateCustomerById
+  parameters: 
+    - $ref: ../../components/parameters/customer_id.yaml
+  requestBody:
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../../components/schemas/v1/customer.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/customer.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+patch:      
+  tags: 
+    -  Customer
+  summary: Patch a customer by ID
+  description:  |
+    Patch a customer by ID
+  operationId: patchCustomerById
+  parameters: 
+    - $ref: ../../components/parameters/customer_id.yaml
+  requestBody:
+    content: 
+      application/json: 
+        schema: 
+          $ref: ../../components/schemas/v1/customer_patch.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/customer.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+delete:     
+  tags: 
+    -  Customer
+  summary: Delete a customer by ID
+  description:  |
+    Delete a customer by ID
+  operationId: deleteCustomerById
+  parameters: 
+    - $ref: ../../components/parameters/customer_id.yaml
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+    '409':
+      $ref: ../../components/responses/conflict_409.yaml

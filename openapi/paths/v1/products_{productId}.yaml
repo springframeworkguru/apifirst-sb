@@ -1,0 +1,105 @@
+get: 
+  tags: 
+    -  Product
+  summary: Get a product by ID
+  description:  |
+    Get a product by ID
+  operationId: getProductById
+  parameters: 
+    - $ref: ../../components/parameters/product_id.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/product.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+put:      
+  tags: 
+    -  Product
+  summary: Update a product by ID
+  description:  |
+    Update a product by ID
+  operationId: updateProductById  
+  parameters: 
+    - $ref: ../../components/parameters/product_id.yaml
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/v1/product_update.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/product.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+patch:      
+  tags: 
+    -  Product
+  summary: Patch a product by ID
+  description:  |
+    Patch a product by ID
+  operationId: patchProductById  
+  parameters: 
+    - name: productId
+      in: path
+      description: The ID of the product to update
+      required: true
+      schema: 
+        type: string
+        format: uuid
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/v1/product_patch.yaml
+  responses:
+    '200':
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/schemas/v1/product.yaml
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml
+delete:     
+  tags: 
+    -  Product
+  summary: Delete a product by ID
+  description:  |
+    Delete Product by ID
+  operationId: deleteProductById
+  parameters: 
+    - $ref: ../../components/parameters/product_id.yaml
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../../components/responses/bad_request_400.yaml
+    '404':
+      $ref: ../../components/responses/not_found_404.yaml 
+    '409':
+      $ref: ../../components/responses/conflict_409.yaml
+
+
+
+
+
+
+
+
+

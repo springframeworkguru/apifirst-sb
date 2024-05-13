@@ -1,0 +1,26 @@
+type: object
+properties: 
+  id: 
+    $ref: ../common/uuid_id.yaml
+  product:
+    $ref: order_product.yaml
+  orderQuantity:
+    type: integer
+    description: The quantity of the product in the order
+    minimum: 1
+    maximum: 10000
+    example: 2
+  shipQuantity:
+    type: integer
+    description: The quantity of the product shipped 
+    minimum: 1
+    maximum: 10000
+    example: 2   
+    nullable: true
+  dateCreated:
+    $ref: ../common/iso_timestamp.yaml
+  dateUpdated:
+    $ref: ../common/iso_timestamp.yaml
+required:
+  - product
+  - orderQuantity
