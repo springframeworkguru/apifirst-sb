@@ -1,11 +1,11 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   version: 1.0.0
   title: API First with Spring Boot
   termsOfService: https://example.com/terms/
   contact:
-    email: john@springframework.guru
-    url: http://springframework.guru/contact
+    email: emeraldjulyrain@gmail.com
+    url: http://example.com/contact
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
